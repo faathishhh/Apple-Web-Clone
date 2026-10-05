@@ -310,18 +310,23 @@
     color: red;
     font-size: 13px;
     padding: 0 20px;
+    width: 150px;
 
 }
 .ipad-card p {
     color: red;
     font-size: 13px;
     padding: 0 20px;
+    width: 150px;
+
 
 }
 .ipad-card1 p {
     color: red;
     font-size: 13px;
     padding: 0 20px;
+    width: 150px;
+
 
 }
 
@@ -357,6 +362,10 @@
     justify-content: center;
 
 
+}
+.desc-head p{
+    color: red;
+    font-size: 13px;
 }
 
 .exp {
@@ -882,6 +891,11 @@
     color: #1d1d1f;
 
 }
+.watch-essen h1 {
+    font-size: 32px;
+    color: #1d1d1f;
+
+}
 
 .essen-container {
     scrollbar-width: none;
@@ -895,6 +909,8 @@
     height: 100%;
     gap: 20px;
      transition: transform 0.4s ease;
+     align-items: center;
+     justify-content: center;
 }
 .essen-track :hover{
      transform: scale(1.01);
@@ -915,8 +931,29 @@
 
 
 }
+.essen-card1 {
+    background-color: white;
+    border-radius: 40px;
+    padding: 5px;
+    display: flex;
+    gap: 20px;
+    width: 300px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease;
+
+
+}
+.watch-essen{
+    display: flex;
+    justify-content: space-between;
+}
 
 .essen-card:hover {
+    transform: scale(1.02);
+}
+.essen-card1:hover {
     transform: scale(1.02);
 }
 
@@ -944,6 +981,11 @@
     text-decoration: none;
     color: #0066cc;
     font-size: 15px;
+}
+.watch-essen a{
+    text-decoration: none;
+    color: #0066cc;
+    font-size: 13px;
 }
 
 .essen-img {
@@ -1333,6 +1375,9 @@
         align-items: center;
         justify-content: center;
     }
+    .desc-head p{
+        font-size: 15px;
+    }
 
     .desc-head h3 {
         font-size: 30px;
@@ -1392,7 +1437,7 @@
 
     .feat-head h1 {
         font-size: 50px;
-        width: 500px;
+        width: 580px;
     }
 
     .feat-head a {
@@ -1535,6 +1580,9 @@
     .essen-contents h1 {
         font-size: 50px;
     }
+    .watch-essen h1 {
+        font-size: 50px;
+    }
 
     .essen-track {
         gap: 30px;
@@ -1545,9 +1593,22 @@
         width: 600px;
         gap: 30px;
     }
+    .essen-card1 {
+        width: 900px;
+        gap: 30px;
+    }
 
     .essen-texts h1 {
         font-size: 35px;
+        width: 370px;
+    }
+    .essen-texts p{
+        font-size: 18px;
+        width: 450px;
+        padding:0 30px;
+    }
+    .essen-texts a{
+        font-size: 18px;
     }
     .unlock-mac{
         padding: 150px 100px;
@@ -1563,6 +1624,9 @@
     }
     .unlock-head a {
         font-size: 25px;
+    }
+    .watch-essen a{
+        font-size: 18px;
     }
     .unlock-desc{
         display: grid;
