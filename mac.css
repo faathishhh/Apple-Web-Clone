@@ -220,25 +220,81 @@
 
 }
 
-.mac-cards {
-    display: flex;
-
-    gap: 10px;
+.store-carousel {
+    position: relative;
     width: 100%;
-    overflow: hidden;
-    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.mac-img-container {
     scrollbar-width: none;
+    width: 100%;
     overflow-x: auto;
-    /* background-color: #1d1d1f; */
+    overflow-y: hidden;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+}
+
+.mac-img-container::-webkit-scrollbar {
+    display: none;
+}
+
+.mac-img-track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
     height: 30vh;
     width: 100%;
     transition: transform 0.4s ease;
 
+}
+
+.mac-img-track :hover {
+    transform: scale(1.01);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(210, 210, 215, 0.85);
+    color: #1d1d1f;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.3s ease,
+        opacity 0.3s ease;
 
 }
 
-.mac-cards :hover {
-    transform: scale(1.01);
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background-color: #d2d2d7;
+}
+
+.carousel-btn:disabled {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .mac-card {
@@ -369,6 +425,11 @@
 .explore h3 {
     font-size: 30px;
 }
+.latest-carousel{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
 
 .product-sec {
     padding: 20px 0;
@@ -434,6 +495,40 @@
     padding: 40px 10px;
 
 }
+.latest-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index:10;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(210, 210, 215, 0.85);
+    color: #1d1d1f;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease,
+        opacity 0.3s ease;
+
+}
+.lleft-btn{
+    left: 5px;
+}
+.lright-btn{
+    right: 5px;
+}
+.latest-btn:hover{
+       background-color: #d2d2d7;
+}
+.latest-btn:disabled{
+    opacity: 0;
+    pointer-events: none;
+}
+
 
 .product-card {
     display: flex;
@@ -1179,7 +1274,8 @@
     flex-direction: column;
     gap: 10px;
 }
-.card-card{
+
+.card-card {
     padding: 10px 0 0 0;
     display: flex;
     flex-direction: column;
@@ -1433,6 +1529,12 @@
     .mac h1 {
         font-size: 70px;
     }
+
+    .carousel-btn {
+        width: 60px;
+        height: 60px;
+    }
+
 
     .mac-card {
         display: flex;
@@ -1774,26 +1876,37 @@
     .last-head h1 {
         font-size: 50px;
     }
-    .last-head h6{
+
+    .last-head h6 {
         font-size: 19.5px;
     }
-    .last-grid{
+
+    .last-grid {
         display: flex;
         flex-direction: row;
         gap: 100px;
     }
-    .last-card{
-        gap:15px;
+
+    .last-card {
+        gap: 15px;
     }
-    .last-card p{
+
+    .last-card p {
         font-size: 20px;
     }
-    .last-card h3{
+
+    .last-card h3 {
         font-size: 28px;
 
     }
-    .last-card h5{
+
+    .last-card h5 {
         font-size: 20px;
+    }
+
+    .latest-btn {
+        width: 60px;
+        height: 60px;
     }
 
 
