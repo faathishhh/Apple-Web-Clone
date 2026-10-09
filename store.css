@@ -319,15 +319,17 @@
     background-color: #f5f5f7;
     ;
 }
-.fixed{
-    width:60px;
+
+.fixed {
+    width: 60px;
     border-radius: 100%;
     position: absolute;
     right: 25px;
     bottom: 25px;
     position: fixed;
 }
-.fixed-img{
+
+.fixed-img {
     width: 100%;
     object-fit: cover;
 }
@@ -371,12 +373,23 @@
     font-size: 15px;
 }
 
+.store-carousel {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
 .store-img-container {
     scrollbar-width: none;
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 20px 0;
+    scroll-behavior: smooth;
+}
+
+.store-img-container::-webkit-scrollbar {
+    display: none;
 }
 
 .store-img-track {
@@ -384,6 +397,49 @@
     gap: 25px;
     align-items: center;
     width: max-content;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(210, 210, 215, 0.85);
+    color: #1d1d1f;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.3s ease,
+        opacity 0.3s ease;
+
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background-color: #d2d2d7;
+}
+
+.carousel-btn:disabled {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .store-card {
@@ -429,13 +485,21 @@
 .latest-text span {
     color: #555;
 }
-
+.latest-carousel{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
 .latest-container {
     scrollbar-width: none;
     overflow-x: auto;
     width: 100%;
     overflow-y: hidden;
+    scroll-behavior: smooth;
 
+}
+.latest-container::-webkit-scrollbar{
+    display: none;
 }
 
 .latest-track {
@@ -450,6 +514,39 @@
 .latest-track :hover {
     transform: scale(1.01);
 
+}
+.latest-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index:10;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(210, 210, 215, 0.85);
+    color: #1d1d1f;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease,
+        opacity 0.3s ease;
+
+}
+.lleft-btn{
+    left: 5px;
+}
+.lright-btn{
+    right: 5px;
+}
+.latest-btn:hover{
+       background-color: #d2d2d7;
+}
+.latest-btn:disabled{
+    opacity: 0;
+    pointer-events: none;
 }
 
 .latest-card {
@@ -578,7 +675,7 @@
     cursor: pointer;
     background-color: #fff;
     border-radius: 20px;
-     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.177);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.177);
 
 }
 
@@ -670,7 +767,7 @@
     height: 35vh;
     width: 80vw;
     padding: 30px;
-     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.107);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.107);
 }
 
 .difference-img1 {
@@ -693,14 +790,14 @@
 
 .diff2 span {
     color: #0066cc;
-    
+
 }
 
 .diff3 h1 {
     font-size: 22px;
     color: #1d1d1f;
-    
-  width: 300px;
+
+    width: 300px;
 }
 
 .diff3 span {
@@ -710,7 +807,7 @@
 .diff4 h1 {
     font-size: 22px;
     color: #1d1d1f;
-  width: 300px;
+    width: 300px;
 }
 
 .diff4 span {
@@ -718,7 +815,7 @@
 }
 
 
-.latest card span{
+.latest card span {
     font-size: 13px;
     font-size: 11px;
     text-transform: uppercase;
@@ -961,6 +1058,10 @@
     .store-images {
         width: 150px;
     }
+    .carousel-btn{
+        width: 60px;
+        height: 60px;
+    }
 
 
     .latest-sec {
@@ -1014,6 +1115,10 @@
     .latest-card p {
         font-size: 16px;
     }
+    .latest-btn{
+        width: 60px;
+        height: 60px;
+    }
 
 
     .latest-cardb p {
@@ -1029,9 +1134,9 @@
         width: 25vw;
     }
 
-    .first-head {
+    .first-head  {
         font-size: 30px;
-        width: 400px;
+        width: 350px;
     }
 
     .second-head {
@@ -1047,36 +1152,42 @@
     .difference-sec {
         padding: 50px 100px;
     }
-    .difference-card{
+
+    .difference-card {
         width: 25vw;
         height: 35vh;
     }
-    .difference-text h1{
+
+    .difference-text h1 {
         font-size: 26px;
     }
-    .diff2 h1{
+
+    .diff2 h1 {
         font-size: 26px;
         width: 230px;
     }
-    .diff2 span{
+
+    .diff2 span {
         font-size: 26px;
     }
 
-    .diff3 h1{
-        font-size: 26px;
-        width: 230px;
-
-    }
-    .diff3 span{
-        font-size: 26px;
-    }
-
-    .diff4 h1{
+    .diff3 h1 {
         font-size: 26px;
         width: 230px;
 
     }
-    .diff4 span{
+
+    .diff3 span {
+        font-size: 26px;
+    }
+
+    .diff4 h1 {
+        font-size: 26px;
+        width: 230px;
+
+    }
+
+    .diff4 span {
         font-size: 26px;
     }
 
