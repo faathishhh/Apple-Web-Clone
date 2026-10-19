@@ -26,7 +26,7 @@
 
                     <li><a href="store.html" data-menu="store">Store</a></li>
                     <li><a href="mac.html" data-menu="mac">Mac</a></li>
-                    <li><a href="ipad.html" data-menu="iPad">iPad</a></li>
+                    <li><a href="ipad.html" data-menu="ipad">iPad</a></li>
                     <li><a href="iphone.html" data-menu="iphone">iPhone</a></li>
                     <li><a href="watch.html" data-menu="watch">Watch</a></li>
                     <li><a href="airpods.html" data-menu="airpods">AirPods</a></li>
@@ -83,6 +83,7 @@
 
 
     </header>
+    <div class="menu-blur"></div>
     <!--announcement sec-->
 
     <section class="announcement">
@@ -836,8 +837,7 @@
 
             <div class="unlock-texts">
 
-                <details class="unlock-item">
-                    <summary class="unlock-question">
+                <details class="unlock-item" data-image="ipad-asset/last.jpg">
                         <span>iPad and iPhone</span>
                         <span class="icon">
                             <img src="mac-asset/down arrow.svg" alt="" class="down">
@@ -853,7 +853,7 @@
                 </details>
 
 
-                <details class="unlock-item">
+                <details class="unlock-item" data-image="ipad-asset/unlock2.jpg">
                     <summary class="unlock-question">
                         <span>iPad and Mac</span>
                         <span class="icon">
@@ -871,7 +871,7 @@
                 </details>
 
 
-                <details class="unlock-item">
+                <details class="unlock-item" data-image="ipad-asset/unlock3.jpg">
                     <summary class="unlock-question">
                         <span>iPad and Apple Watch</span>
                         <span class="icon">
@@ -896,7 +896,7 @@
             </div>
 
             <div class="unlock-img">
-                <img src="ipad-asset/last.jpg" alt="" class="un-img">
+                <img src="ipad-asset/last.jpg" alt="" class="un-img"  id="unlockImage">
             </div>
 
 
@@ -927,7 +927,7 @@
 
     <!-- last sec -->
 
-    <section class="last" data-menu-panel="iPad">
+  <section class="last" data-menu-panel="ipad">
 
         <div class="last-head">
             <h1>iPad</h1>

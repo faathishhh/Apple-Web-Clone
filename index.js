@@ -25,57 +25,37 @@ if (menuBtn && closeBtn && mobileNav) {
 /* =========================
    hover menu
 ========================= */
-
-
 const menuLinks = document.querySelectorAll("[data-menu]");
 const menuPanels = document.querySelectorAll("[data-menu-panel]");
+const menuBlur = document.querySelector(".menu-blur");
+const header = document.querySelector(".store-head");
 
-let closeTimer;
-
-function showMenu(menuName) {
-    clearTimeout(closeTimer);
-
+function closeMenu() {
     menuPanels.forEach((panel) => {
         panel.classList.remove("show-menu", "hover-menu");
     });
 
-    const panel = document.querySelector(
-        `[data-menu-panel="${menuName}"]`
-    );
-
-    if (panel) {
-        panel.classList.add("hover-menu", "show-menu");
-    }
-}
-
-function closeMenu() {
-    closeTimer = setTimeout(() => {
-        menuPanels.forEach((panel) => {
-            panel.classList.remove("show-menu", "hover-menu");
-        });
-    }, 200);
+    menuBlur?.classList.remove("show-blur");
 }
 
 menuLinks.forEach((link) => {
     link.addEventListener("mouseenter", () => {
-        showMenu(link.dataset.menu);
-    });
+        const menuName = link.dataset.menu;
 
-    link.addEventListener("mouseleave", () => {
         closeMenu();
+
+        const panel = document.querySelector(
+            `[data-menu-panel="${menuName}"]`
+        );
+
+        if (panel) {
+            panel.classList.add("hover-menu", "show-menu");
+            menuBlur?.classList.add("show-blur");
+        }
     });
 });
 
-menuPanels.forEach((panel) => {
-    panel.addEventListener("mouseenter", () => {
-        clearTimeout(closeTimer);
-    });
-
-    panel.addEventListener("mouseleave", () => {
-        closeMenu();
-    });
-});
-
+header?.addEventListener("mouseleave", closeMenu);
 
 /* =========================
    REUSABLE CAROUSEL FUNCTION
@@ -162,3 +142,46 @@ setupCarousel("loudContainer","loudLeft", "loudRight",430);
 // Store loud Carousel
 setupCarousel("expContainer","expLeft", "expRight",430);
 
+
+
+
+/* =========================
+   unlock section
+========================= */
+
+
+
+// const unlockItems = document.querySelectorAll(".unlock-item");
+// const unlockImage = document.getElementById("unlockImage");
+
+// unlockItems.forEach((item) => {
+//     item.addEventListener("toggle", () => {
+
+//         if (item.open) {
+//             unlockImage.src = item.dataset.image;
+//         }
+
+//     });
+// });
+
+const unlockItems = document.querySelectorAll(".unlock-item");
+const unlockImage = document.querySelector(".un-img");
+
+unlockItems.forEach((item) => {
+    item.addEventListener("toggle", () => {
+
+        if (item.open) {
+
+            // Close other details sections
+            unlockItems.forEach((otherItem) => {
+                if (otherItem !== item) {
+                    otherItem.open = false;
+                }
+            });
+
+            // Change the image
+            unlockImage.src = item.dataset.image;
+        }
+
+    });
+});
